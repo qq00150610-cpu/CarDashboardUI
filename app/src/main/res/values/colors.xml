@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主色调 -->
+    <color name="primary_color">#1976D2</color>
+    <color name="primary_dark_color">#1565C0</color>
+    <color name="accent_color">#FFC107</color>
+    
+    <!-- 背景色 -->
+    <color name="background_dark">#121212</color>
+    <color name="background_card">#1E1E1E</color>
+    <color name="background_surface">#2D2D2D</color>
+    
+    <!-- 文字颜色 -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_disabled">#666666</color>
+    
+    <!-- 状态颜色 -->
+    <color name="status_online">#4CAF50</color>
+    <color name="status_offline">#F44336</color>
+    <color name="status_warning">#FF9800</color>
+    
+    <!-- 分割线 -->
+    <color name="divider">#333333</color>
+    
+    <!-- 渐变色 -->
+    <color name="gradient_start">#1A237E</color>
+    <color name="gradient_end">#3949AB</color>
+</resources>

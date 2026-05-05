@@ -1,0 +1,5 @@
+<resources>
+    <!-- Android 6.0+ 特定尺寸 -->
+    <dimen name="status_bar_height">25dp</dimen>
+    <dimen name="nav_bar_height">56dp</dimen>
+</resources>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">车机桌面UI</string>
+    <string name="dashboard">仪表盘</string>
+    <string name="navigation">导航</string>
+    <string name="media">媒体</string>
+    <string name="phone">电话</string>
+    <string name="settings">设置</string>
+    <string name="climate">空调</string>
+    <string name="vehicle">车辆</string>
+    
+    <!-- 时间格式 -->
+    <string name="time_format">HH:mm</string>
+    <string name="date_format">yyyy年MM月dd日</string>
+    <string name="weekday_format">EEEE</string>
+    
+    <!-- 天气信息 -->
+    <string name="weather_loading">加载中...</string>
+    <string name="weather_error">天气信息不可用</string>
+    
+    <!-- 音乐控制 -->
+    <string name="music_play">播放</string>
+    <string name="music_pause">暂停</string>
+    <string name="music_next">下一首</string>
+    <string name="music_prev">上一首</string>
+    
+    <!-- 导航信息 -->
+    <string name="navigation_start">开始导航</string>
+    <string name="navigation_search">搜索目的地</string>
+    
+    <!-- 车辆信息 -->
+    <string name="vehicle_speed">速度</string>
+    <string name="vehicle_fuel">燃油</string>
+    <string name="vehicle_battery">电池</string>
+    <string name="vehicle_mileage">里程</string>
+</resources>

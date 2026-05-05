@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1117"
+    android:orientation="vertical">
+
+    <!-- ====== 顶部状态栏 ====== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:background="#161B22">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14:30"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2025年5月5日 周一"
+                android:textColor="#8B949E"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📶 4G"
+            android:textColor="#58A6FF"
+            android:textSize="11sp"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🛰 GPS"
+            android:textColor="#3FB950"
+            android:textSize="11sp"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:id="@+id/vehicle_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔵 已连接"
+            android:textColor="#3FB950"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+    <!-- ====== 主内容 ====== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <!-- 左侧列：速度 + 导航 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:layout_marginEnd="5dp">
+
+            <!-- 速度卡片 -->
+            <LinearLayout
+                android:id="@+id/card_speed"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:background="#161B22"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚡ 当前速度"
+                    android:textColor="#58A6FF"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/speed_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="0"
+                    android:textColor="#F0883E"
+                    android:textSize="64sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="km/h"
+                    android:textColor="#8B949E"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <!-- 导航卡片 -->
+            <LinearLayout
+                android:id="@+id/card_nav"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:background="#161B22"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🧭 导航"
+                    android:textColor="#58A6FF"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/nav_destination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="🚗 北京市中心"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/nav_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="⏱ 预计 25 分钟"
+                    android:textColor="#F0883E"
+                    android:textSize="13sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/nav_start_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#1F6FEB"
+                    android:text="开始导航"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 中间列：燃油 + 电池 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="5dp">
+
+            <!-- 燃油卡片 -->
+            <LinearLayout
+                android:id="@+id/card_fuel"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:background="#161B22"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⛽ 燃油"
+                    android:textColor="#58A6FF"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/fuel_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="65%"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:progress="65"
+                    android:progressTint="#F0883E"
+                    android:progressBackgroundTint="#30363D" />
+
+            </LinearLayout>
+
+            <!-- 电池卡片 -->
+            <LinearLayout
+                android:id="@+id/card_battery"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:background="#161B22"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔋 电池"
+                    android:textColor="#58A6FF"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/battery_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="78%"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:progress="78"
+                    android:progressTint="#3FB950"
+                    android:progressBackgroundTint="#30363D" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 右侧列：天气 + 音乐 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+
+            <!-- 天气卡片 -->
+            <LinearLayout
+                android:id="@+id/card_weather"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:background="#161B22"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌤 天气"
+                    android:textColor="#58A6FF"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/weather_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="22°"
+                    android:textColor="#FFFFFF"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/weather_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="☁ 多云"
+                    android:textColor="#8B949E"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/weather_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="📍 北京市"
+                    android:textColor="#484F58"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <!-- 音乐卡片 -->
+            <LinearLayout
+                android:id="@+id/card_music"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:background="#161B22"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎵 音乐"
+                    android:textColor="#58A6FF"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/song_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="起风了"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/artist_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周深"
+                    android:textColor="#8B949E"
+                    android:textSize="11sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <!-- 播放控制 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/prev_btn"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="上一首"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_skip_previous"
+                        android:tint="#8B949E" />
+
+                    <ImageButton
+                        android:id="@+id/play_pause_btn"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="#1F6FEB"
+                        android:contentDescription="播放/暂停"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_play_arrow"
+                        android:tint="#FFFFFF"
+                        android:layout_marginHorizontal="12dp" />
+
+                    <ImageButton
+                        android:id="@+id/next_btn"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="下一首"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_skip_next"
+                        android:tint="#8B949E" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ====== 底部导航栏 ====== -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#161B22"
+        android:orientation="horizontal">
+
+        <!-- 仪表盘 -->
+        <LinearLayout
+            android:id="@+id/nav_dashboard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:tag="dashboard">
+
+            <ImageView
+                android:id="@+id/nav_icon_dashboard"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_dashboard"
+                android:tint="#F0883E" />
+
+            <TextView
+                android:id="@+id/nav_text_dashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="仪表盘"
+                android:textColor="#F0883E"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <!-- 导航 -->
+        <LinearLayout
+            android:id="@+id/nav_navigation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:tag="navigation">
+
+            <ImageView
+                android:id="@+id/nav_icon_navigation"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_navigation"
+                android:tint="#8B949E" />
+
+            <TextView
+                android:id="@+id/nav_text_navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="导航"
+                android:textColor="#8B949E"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <!-- 媒体 -->
+        <LinearLayout
+            android:id="@+id/nav_media"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:tag="media">
+
+            <ImageView
+                android:id="@+id/nav_icon_media"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_media"
+                android:tint="#8B949E" />
+
+            <TextView
+                android:id="@+id/nav_text_media"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="媒体"
+                android:textColor="#8B949E"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <!-- 电话 -->
+        <LinearLayout
+            android:id="@+id/nav_phone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:tag="phone">
+
+            <ImageView
+                android:id="@+id/nav_icon_phone"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_phone"
+                android:tint="#8B949E" />
+
+            <TextView
+                android:id="@+id/nav_text_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="电话"
+                android:textColor="#8B949E"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <!-- 设置 -->
+        <LinearLayout
+            android:id="@+id/nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:tag="settings">
+
+            <ImageView
+                android:id="@+id/nav_icon_settings"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_settings"
+                android:tint="#8B949E" />
+
+            <TextView
+                android:id="@+id/nav_text_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="设置"
+                android:textColor="#8B949E"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

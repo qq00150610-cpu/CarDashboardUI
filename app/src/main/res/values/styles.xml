@@ -1,0 +1,21 @@
+<resources>
+    
+    <!-- 基础主题（使用纯Android平台主题） -->
+    <style name="Theme.CarDashboard" parent="android:Theme.Material.NoActionBar">
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:statusBarColor">#161B22</item>
+        <item name="android:navigationBarColor">#161B22</item>
+    </style>
+    
+    <!-- 全屏主题 -->
+    <style name="Theme.CarDashboard.Fullscreen" parent="Theme.CarDashboard">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+    
+</resources>
